@@ -1,0 +1,138 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color:#242424;
+    height:100%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 51%, rgba(235,235,235,1) 100%);
+}
+
+header{
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#container{
+    width:80%;
+    max-width:300px;
+    height:200px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin:70px auto 0px auto;
+}
+
+#container h2{
+    text-align:center;
+    font-size:47px;
+    font-weight: 500;
+
+
+    margin:0;
+}
+
+#time{
+    width:80%;
+    max-width:300px;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+    font-weight: 100;
+    margin:0 auto;
+}
+
+#time div{
+    height:100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align:center;
+    font-size:120px;
+}
+
+#time #point{
+    width:20px;
+}
+
+
+
+#timer-choose{
+    width:80%;
+    max-width:300px;
+    height:200px;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin:50px auto 0 auto;
+
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+#timer-choose .panel-num{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    
+    max-width:280px;
+    width:80%;
+}
+
+.panel-num h4{
+    font-size:14px;
+}
+
+.down, .up{
+    width:78px;
+    height:20px;
+    background: rgb(204,204,204);
+background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(196,196,196,1) 100%);
+}
+    .down:hover,
+    .up:hover{
+        cursor: pointer;
+    }
+
+#minutes, #rest{
+    background-color:#242424;
+    width:78px;
+    height:80px;
+    color:white;
+    font-size:60px;
+    text-align:center;
+    background: radial-gradient(circle, rgba(85,85,85,1) 0%, rgba(36,36,36,1) 100%);
+}
+
+button{
+    justify-self: auto;
+    width:80px;
+    height:30px;
+
+    font-weight: 700;
+    background-color: transparent;
+    color:#242424;
+
+    outline: none;
+
+    border: none;
+
+    font-size:14px;
+}
+
+    button:hover{
+        cursor:pointer;
+    }

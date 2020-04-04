@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header><b>Pomodoro</b> Clock</header>
+
+    <div id="container">
+        <h2>TIMER</h2>
+        <div id="time">
+            <div class="time-num" id="min">00</div>
+            <div id="point">:</div>
+            <div class="time-num" id="sec">00</div>
+        </div>
+    </div>
+
+    <div id="timer-choose">
+            <div class="panel-num" style="margin:0">
+                <h4>Min to Study</h4>
+                <div class="up" id="up-min" onclick=Min(id)></div>
+                <div id="minutes">0</div>
+                <div class="down" id="down-min" onclick=Min(id)></div>
+            </div>
+
+            <div class="panel-num">
+                <h4>Min to Rest</h4>
+                <div class="up" id="up-rest" onclick=Rest(id)></div>
+                <div id="rest">0</div>
+                <div class="down" id="down-rest" onclick=Rest(id)></div>
+            </div>
+    </div>
+
+    <button onclick=setTime()>OK</button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
