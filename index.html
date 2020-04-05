@@ -23,22 +23,30 @@
     </div>
 
     <div id="timer-choose">
-            <div class="panel-num" style="margin:0">
-                <h4>Min to Study</h4>
-                <div class="up" id="up-min" onclick=Min(id)></div>
-                <div id="minutes">0</div>
-                <div class="down" id="down-min" onclick=Min(id)></div>
+            <div id="control">
+                <button class="controlB" id="pause" onclick=pause()>PAUSE</button>
+                <button class="controlB" id="stop" onclick=stop()>STOP</button>
+                <button class="controlB" id="reset" onclick=reset()>RESET</button>
             </div>
 
-            <div class="panel-num">
-                <h4>Min to Rest</h4>
-                <div class="up" id="up-rest" onclick=Rest(id)></div>
-                <div id="rest">0</div>
-                <div class="down" id="down-rest" onclick=Rest(id)></div>
+            <div id="panels">
+                <div class="panel-num" id="panel-um" style="margin:0">
+                    <h4>Min to Study</h4>
+                    <div class="up" id="up-min" onclick=Min(id)></div>
+                    <div id="minutes">0</div>
+                    <div class="down" id="down-min" onclick=Min(id)></div>
+                </div>
+    
+                <div class="panel-num" id="panel-ds">
+                    <h4>Min to Rest</h4>
+                    <div class="up" id="up-rest" onclick=Rest(id)></div>
+                    <div id="rest">0</div>
+                    <div class="down" id="down-rest" onclick=Rest(id)></div>
+                </div>
+    
+                <button id="ok" onclick=setTime()>OK</button>
             </div>
     </div>
-
-    <button onclick=setTime()>OK</button>
 
     <script src="index.js"></script>
 </body>

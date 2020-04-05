@@ -7,7 +7,10 @@ body{
     color:#242424;
     height:100%;
     background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 51%, rgba(235,235,235,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 51%, rgba(235,235,235,1) 100%);
+
+    margin:0;
+    padding:0;
 }
 
 header{
@@ -72,22 +75,26 @@ header{
     max-width:300px;
     height:200px;
 
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-
     margin:50px auto 0 auto;
 
     text-transform: uppercase;
     font-weight: 200;
 }
+#timer-choose #panels{
+    display:grid;
+    grid-template-areas: "panel-um panel-ds" "button button";
 
-#timer-choose .panel-num{
+}
+    #panel-um{ grid-area:panel-um;}
+    #panel-ds{ grid-area:panel-ds;}
+
+#panels .panel-num{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-self: center;
-    
+
     max-width:280px;
     width:80%;
 }
@@ -100,7 +107,7 @@ header{
     width:78px;
     height:20px;
     background: rgb(204,204,204);
-background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(196,196,196,1) 100%);
+    background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(196,196,196,1) 100%);
 }
     .down:hover,
     .up:hover{
@@ -117,10 +124,13 @@ background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(196,196,196,1) 10
     background: radial-gradient(circle, rgba(85,85,85,1) 0%, rgba(36,36,36,1) 100%);
 }
 
-button{
+#ok{
+    margin:0 auto;
     justify-self: auto;
     width:80px;
     height:30px;
+
+    grid-area: button;
 
     font-weight: 700;
     background-color: transparent;
@@ -136,3 +146,43 @@ button{
     button:hover{
         cursor:pointer;
     }
+
+#control{
+    width:inherit;
+    max-width:inherit;
+    height:35px;
+    position:fixed;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#control .controlB{
+    width:80px;
+    height:inherit;
+
+    font-weight: 600;
+    border-radius: 5px;
+
+    border-color:transparent;
+    outline: none;
+
+    color:white;
+}
+
+    #pause{
+        background-color:rgba(46,92,196,1) ;
+    }
+
+    #stop{
+        background-color: #c42e2e;
+    }
+
+    #reset{
+        background-color: #c8c1c1;
+    }
+
+#control .controlB:hover{
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.20);
+}
