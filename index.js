@@ -35,7 +35,9 @@ function limit(val){
     return val;
 }
 
-document.getElementById("control").style.display = "none";
+document.getElementById('control');
+control.style.opacity = 0;
+control.style.filter = "alpha(opacity="+0+")";
 
 function setTime(){
     //get value
@@ -82,10 +84,16 @@ function setTime(){
             }
         }, 1000);
 
-        timer = document.querySelector("#panels");
-        fadeOut(timer,1);
+        panels = document.querySelector("#panels");
 
-        document.getElementById("control").style.display = "flex";
+        if(setTime.caller.name == "onclick"){
+            setTimeout(function(){
+                fadeIn(control,1);
+            },1000)
+            fadeOut(panels,1);
+        }
+
+        
     }else{
         alert("Informe o tempo para descanço e estudo")
     }   
@@ -98,6 +106,10 @@ function setRest(){
 
 }
 
+function fadeIn(element,time){
+    processa(element,time,0,100);
+}
+
 function fadeOut(element,time){
     processa(element,time,100,0);
 }
@@ -105,7 +117,10 @@ function fadeOut(element,time){
 function processa(element,time,initial,end){
     if(initial == 0){
         increment = 2;
-        element.style.display = "block";
+        element.style.display = "flex";
+        if(element.id == "panels"){
+            element.style.display = "grid"
+        }
     }else{
         increment = -2;
     }
@@ -142,4 +157,25 @@ function pause(){
     }
 }
 
+function stop(){
+    clearInterval(tempM)
+    clearInterval(tempS)
+    document.getElementById("min").innerHTML = "00"
+    document.getElementById("sec").innerHTML = "00"
 
+    control = document.querySelector("#control")
+    panels = document.querySelector("#panels")
+    setTimeout(function(){
+        fadeIn(panels,1)
+    },1000)
+    fadeOut(control,1);
+
+}
+
+function reset(){
+    clearInterval(tempM);
+    clearInterval(tempS);
+    document.getElementById("min").innerHTML = minutes
+    document.getElementById("sec").innerHTML = "00"
+    setTime()
+}
